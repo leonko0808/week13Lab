@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+</head>
+<body>
+	<form name="form" id = "form_name">
+	<p>Number1
+		<input type="content" name="num1" id="num1">
+	</p>
+	<p>Number2
+	<input type="content" name="num2" id="num2">`     
+	</p>
+	
+		<select id="select" name="select">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		<input type="button" name="output" value="output" onclick="processFormData();" >
+		<p>Result = <span id = "result"></span></p>
+	</form>
+
+	<script type="text/javascript">
+			function processFormData() {
+				// body...
+				const num1Element =  document.getElementById("num1");
+				const num1 = parseInt(num1Element.value);
+				const num2Element = document.getElementById("num2");
+				const num2 = parseInt(num2Element.value);
+				var form = document.getElementById("form_name");
+				var operater = form.select.value;
+				if(operater == "+"){
+					var result = num2+num1;
+				}
+				if(operater == "-"){
+					var result = num1-num2;
+				}
+				if (operater == "*") {
+					var result = num1*num2;
+				}
+				if(operater == "/"){
+					var result =num1/num2;
+				}
+				document.getElementById('result').innerHTML =result;
+			}
+
+
+	</script>
+
+
+	
+</body>
+</html>  
